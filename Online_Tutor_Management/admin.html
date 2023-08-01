@@ -1,0 +1,706 @@
+<!doctype html>
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 0px;
+        }
+
+        header {
+            background-color: aqua;
+        }
+
+        header nav {
+            padding: 10px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .welcome {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            font-family: cursive;
+            font-size: 20px;
+            color: #9d5617;
+        }
+
+        .lout {
+            margin-right: 20px;
+            display: flex;
+            flex-direction: row;
+            justify-content: flex-end;
+        }
+
+        .lout button {
+            border-radius: 4px;
+            padding: 5px;
+            border: 2px;
+            border-style: solid;
+            border-color: #d93a00;
+            color: #c31e54;
+            background-color: #ffffff;
+            transition: color 0.25s;
+            transition: background-color 0.25s;
+        }
+
+        .lout button:hover {
+            color: #ffffff;
+            background-color: #c31e54;
+            cursor: pointer;
+        }
+
+
+        section {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+
+        }
+
+        .d_left {
+            height: 695px;
+            background-color: cadetblue;
+        }
+
+        .d_right_dash {
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+        .l_flexb {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .l_drop {
+            padding: 5px;
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            height: 50px;
+            background-color: cadetblue;
+            border-top: 0px;
+            border-bottom: 3px;
+            border-style: solid;
+            border-color: #6cd992;
+        }
+
+        .l_drop a {
+            padding-top: 10px;
+            text-align: center;
+            text-decoration: none;
+            color: antiquewhite;
+            font-family: cursive;
+        }
+
+        .l_drop :hover {
+            background-color: gray;
+            width: 100%;
+            padding-top: 15px;
+        }
+
+        .c_dash {
+            background-color: rgba(240, 248, 255, 0.51);
+            height: 100%;
+            display: grid;
+            grid-template-rows: 150px 100px 1fr;
+        }
+
+        .dash_div_1 {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .dash_div_1 span {
+            font-family: monospace;
+            font-size: 30px;
+            color: white;
+        }
+
+        .dash_div_2 {
+            margin-left: 15px;
+            margin-right: 15px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            align-items: center;
+            column-gap: 20px;
+        }
+
+        .dash_div_2_1 {
+            font-family: monospace;
+            font-size: 25px;
+            display: flex;
+            flex-direction: row;
+            padding-left: 25px;
+            background-color: white;
+            height: 100%;
+            align-items: center;
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 0px;
+            border-left: -15px;
+            border-style: solid;
+            border-color: greenyellow;
+        }
+
+        .d_right_stu {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .stu_div {
+            margin-top: 100px;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+
+        .stu_data {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .stu_form {
+            border-top: 0px;
+            border-right: 0px;
+            border-bottom: 0px;
+            border-left: 5px;
+            border-style: solid;
+            border-color: blueviolet;
+            border-radius: 5px;
+            width: 250px;
+            height: 350px;
+            display: flex;
+            flex-direction: column;
+            background-color: antiquewhite;
+            padding: 25px;
+        }
+
+        .stu_f {
+            border-radius: 5px;
+            padding-right: 5px;
+            margin-bottom: 8px;
+            height: 35px;
+        }
+
+        .stu_ff {
+            height: 35px;
+            border-radius: 5px;
+            background-color: rgb(95, 158, 160);
+            color: antiquewhite;
+            transition: background-color 0.25s;
+            transition: color 0.25s;
+        }
+
+        .stu_ff:hover {
+            background-color: gray;
+            color: white;
+            cursor: pointer;
+        }
+
+        .d_right_tutor {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .d_right_parent {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .d_right_allmem {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+
+        }
+
+        .allmem {
+            display: grid;
+            height: 350px;
+        }
+
+        .memtable {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .memtable table {
+            width: 100%;
+            margin-left: 10px;
+            margin-right: 10px;
+        }
+
+        .memtable table th {
+            font-family: Garamond;
+            background-color: #b95ab9;
+            border: 1px;
+            border-style: solid;
+            border-color: #5d1313;
+
+        }
+
+        .memtable table td {
+            background-color: rgba(127, 196, 255, 0.5);
+            border: 1px;
+            border-style: solid;
+            text-align: center;
+            height: 15px;
+        }
+
+        .d_right_parent_inq {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+        }
+
+        .d_right_payment {
+            display: none;
+            background-repeat: no-repeat;
+            background-image: url("images/kids-education-child-boy-study-school-thinking-bubble-dreaming-over-black-chalkboard-75214276.jpg");
+            height: 100%;
+            background-position: center;
+            background-size: cover;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <div class="welcome"><span>Welcome Back!</span></div>
+            <div class="lout"><button><a href="signin.html" style="text-decoration: none; color: cornflowerblue">Logout</a></button> </div>
+
+        </nav>
+    </header>
+    <section>
+        <div class="d_left">
+            <div class="l_flexb">
+                <div class="l_drop" ><a href="#" onclick="func_dash('Dashboard')">Dashboard </a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('Add A Student')">Add A Student </a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('Add A Tutor')">Add A Tutor</a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('Add A Parent')">Add A Parent</a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('All Members')">All Members</a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('Parents Inquries')">Parents Inquries</a> </div>
+                <div class="l_drop" ><a href="#" onclick="func_dash('Payments')">Payments</a> </div>
+            </div>
+        </div>
+        <div class="d_right_dash">
+            <div class="c_dash">
+                <div class="dash_div_1"><span>Welcome To Admin Portal</span></div>
+                <div class="dash_div_2">
+                    <div class="dash_div_2_1">
+                        <div>
+                            <p>Tutors Hired</p>
+                            <p>1250</p>
+                        </div>
+                    </div>
+                    <div class="dash_div_2_1">
+                        <div>
+                            <p>Earnings</p>
+                            <p>1,00,000$</p>
+                        </div>
+                    </div>
+                    <div class="dash_div_2_1">
+                        <div>
+                            <p>Tutor Registered</p>
+                            <p>12050</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="dash_div_3"></div>
+            </div>
+        </div>
+        <div class="d_right_stu">
+            <div class="c_dash">
+                <div class="stu_div">
+                    <div></div>
+                    <div stu_data>
+                        <form class="stu_form">
+                            <div class="stu_text"><span>Name</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Name">
+                            <div class="stu_text"><span>Student ID</span></div>
+                            <input class="stu_f" type="number" placeholder="00000000000">
+                            <div class="stu_text"><span>Username</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Username">
+                            <div class="stu_text"><span>Email Address</span></div>
+                            <input class="stu_f" type="email" placeholder="Enter Your e-Mail Address">
+                            <div class="stu_text"><span>Password</span></div>
+                            <input class="stu_f" type="password" placeholder="Enter Your Password">
+                            <input class="stu_ff" type="submit" value="Register Now">
+                        </form>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="d_right_tutor">
+            <div class="c_dash">
+                <div class="stu_div">
+                    <div></div>
+                    <div stu_data>
+                        <form class="stu_form">
+                            <div class="stu_text"><span>Name</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Name">
+                            <div class="stu_text"><span>Upload Resume</span></div>
+                            <input class="stu_f" type="file" placeholder="00000000000">
+                            <div class="stu_text"><span>Username</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Username">
+                            <div class="stu_text"><span>Email Address</span></div>
+                            <input class="stu_f" type="email" placeholder="Enter Your e-Mail Address">
+                            <div class="stu_text"><span>Password</span></div>
+                            <input class="stu_f" type="password" placeholder="Enter Your Password">
+                            <input class="stu_ff" type="submit" value="Add Now">
+                        </form>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="d_right_parent">
+            <div class="c_dash">
+                <div class="stu_div">
+                    <div></div>
+                    <div stu_data>
+                        <form class="stu_form">
+                            <div class="stu_text"><span>Name</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Name">
+                            <div class="stu_text"><span>Child ID</span></div>
+                            <input class="stu_f" type="number" placeholder="00000000000">
+                            <div class="stu_text"><span>Username</span></div>
+                            <input class="stu_f" type="text" placeholder="Enter Your Username">
+                            <div class="stu_text"><span>Email Address</span></div>
+                            <input class="stu_f" type="email" placeholder="Enter Your e-Mail Address">
+                            <div class="stu_text"><span>Password</span></div>
+                            <input class="stu_f" type="password" placeholder="Enter Your Password">
+                            <input class="stu_ff" type="submit" value="Add Now">
+                        </form>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+        <div class="d_right_allmem">
+            <div class="c_dash">
+                <div class="allmem">
+                    <div class="memtable">
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Name </th>
+                                <th>Username</th>
+                                <th>ID</th>
+                                <th>Resume</th>
+                                <th>Email</th>
+                                <th>Edit</th>
+                                <th>Delete</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d_right_parent_inq">
+            <div class="c_dash">
+                <div class="allmem">
+                    <div class="memtable">
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Name </th>
+                                <th>Child Id</th>
+                                <th>Inquery</th>
+                                <th>Tutor</th>
+                                <th>Status</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="d_right_payment">
+            <div class="c_dash">
+                <div class="allmem">
+                    <div class="memtable">
+                        <table>
+                            <tr>
+                                <th>#</th>
+                                <th>Tutor Name </th>
+                                <th>Last Month Income</th>
+                                <th>Total Income</th>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>3</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>4</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>6</td>
+                                <td> </td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer style="
+    background-color:blueviolet;
+    padding: 2px;"><div class="f_div_h" style="
+    display: flex;
+    flex-direction: row;
+    justify-content:space-around;"><div class="f_div_c1" style="
+    display: flex;
+    flex-direction: row;
+    justify-content:center;"><span>Tutor @2022 All Right Reserved</span></div>
+    <div class="f_div_c2" style="
+    display: flex;
+    flex-direction: row;
+    justify-content: center;"><span>Designed By TEAM 12</span></div></div></footer>
+</body>
+<script>
+    function func_dash(check){
+        element1 = document.getElementsByClassName('d_right_dash');
+        element2 = document.getElementsByClassName('d_right_stu');
+        element3 = document.getElementsByClassName('d_right_tutor');
+        element4 = document.getElementsByClassName('d_right_parent');
+        element5 = document.getElementsByClassName('d_right_allmem');
+        element6 = document.getElementsByClassName('d_right_parent_inq');
+        element7 = document.getElementsByClassName('d_right_payment');
+        if(check === 'Dashboard')
+        {
+           element1[0].style.display = 'block';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'none'; 
+
+        }
+        else if(check === 'Add A Student')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'block';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'none';
+        }
+        else if(check === 'Add A Tutor')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'block';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'none';
+        }
+        else if(check === 'Add A Parent')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'block';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'none';
+        }
+        else if(check === 'All Members')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'block';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'none';
+        }
+        else if(check === 'Parents Inquries')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'block';
+           element7[0].style.display = 'none';
+        }
+        else if(check === 'Payments')
+        {
+            element1[0].style.display = 'none';
+           element2[0].style.display = 'none';
+           element3[0].style.display = 'none';
+           element4[0].style.display = 'none';
+           element5[0].style.display = 'none';
+           element6[0].style.display = 'none';
+           element7[0].style.display = 'block';
+        }
+    }
+    
+</script>
+
+</html>

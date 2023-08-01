@@ -1,0 +1,325 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            header {
+                background-color: aqua;
+                width: 100%;
+
+            }
+            footer {
+                width: 100%;
+                background-color: blueviolet;
+                height: 23px;
+            }
+            .f_div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .f_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .f_div_2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            header nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .nav_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 5px 5px 3px;
+                font-family: cursive;
+                color: #9d5617;
+            }
+            .nav_div_2 {
+                margin-right: 35px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                padding: 5px 5px 3px;
+            }
+
+            .nav_div_2 button {
+                border-radius: 4px;
+                padding: 5px;
+                border: 2px;
+                border-style: solid;
+                border-color: #d93a00;
+                color: #c31e54;
+                background-color: #ffffff;
+                transition: color 0.25s;
+                transition: background-color 0.25s;
+            }
+            .nav_div_2 button:hover {
+                color: #ffffff;
+                background-color: #c31e54;
+                cursor: pointer;
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 7fr;
+            }
+            .sidebar {
+                background-color: cadetblue;
+                height: 692px;
+            }
+            .sidebar div {
+                padding: 5px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                height: 58px;
+                background-color: cadetblue;
+                border-top: 0px;
+                border-right: 3px;
+                border-bottom: 3px;
+                border-style:groove;
+                border-color: #6cd992;
+            }
+            .sidebar a {
+                padding: 10px 10px 5px 5px;
+                text-align: center;
+                text-decoration: none;
+                color: antiquewhite;
+                font-family: cursive;
+            }
+            .sidebar div,
+            a:hover {
+                background-color: gray;
+                width: 100%;
+                padding-top: 15px;
+            }
+
+            .right_main {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("/images/school-study-group-activity-elementary-children-doing-research-together-home-work-together-with-laptop-books-boy-girl-having-discussion-flat-isolated-white-background_185694-174.webp");
+                height: 692px;
+                overflow: auto;
+            }
+            .right_1 {
+                display: none;
+                grid-template-rows: 150px 100px 1fr;
+                background-color: rgba(222, 184, 135, 0.755);
+                height: 692px;
+                overflow: auto;
+            }
+            .dash_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .dash_div_1 span {
+                font-family: monospace;
+                font-size: 30px;
+                color: white;
+            }
+
+            .dash_div_2 {
+                margin-left: 15px;
+                margin-right: 15px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-items: center;
+                column-gap: 20px;
+            }
+
+            .dash_div_2_1 {
+                font-family: monospace;
+                font-size: 25px;
+                display: flex;
+                flex-direction: row;
+                padding-left: 25px;
+                background-color: white;
+                height: 100%;
+                align-items: center;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 0;
+                border-left: -15px;
+                border-style: solid;
+                border-color: greenyellow;
+            }
+            .right_2 {
+                display: none;
+                height: 700px;
+                background-color: rgba(0, 0, 0, 0.682);
+
+            }
+            .r_r {
+                display: flex;
+                flex-direction: column;
+                justify-content:flex-start;
+                align-items: center;
+            }
+            .rr_h{
+                margin-top: 15px;
+                margin-bottom: 25px;
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 25px;
+                color: white;
+            }
+            .r_r table {
+                font-size: 20px;
+                width: 100%;
+            }
+            .r_r th {
+                font-family: Garamond;
+                background-color: #b95ab9;
+                border: 1px;
+                border-style: solid;
+                border-color: #5d1313;
+            }
+            .r_r td {
+                background-color: rgba(127, 196, 255, 0.5);
+                border: 1px;
+                border-style: solid;
+                text-align: center;
+                height: 15px;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav_div_1">
+                    <span>Welcome Back!</span></div>
+                <div class="nav_div_2">
+                    <button onclick="window.location.href='signin.html';">Logout</button>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="sidebar">
+                <div>
+                    <a href="#" onclick="func('dashboard')">Dashboard</a>
+                </div>
+                <div>
+                    <a href="#" onclick="func('reserve')">Reservation Requests</a>
+                </div>
+                <div>
+                    <a href="#" onclick="func('books')">E-Books Library</a>
+                </div>
+                <div>
+                    <a href="#" onclick="func('rate')">View Ratings</a>
+                </div>
+            </div>
+            <div class="right_main">
+                <div class="right_1">
+                    <div class="dash_div_1">
+                        <span>Welcome To Tutors Portal</span></div>
+                    <div class="dash_div_2">
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Hired Number</p>
+                                <p>14</p>
+                            </div>
+                        </div>
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Monthly Income</p>
+                                <p>2000$</p>
+                            </div>
+                        </div>
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Ratings</p>
+                                <p>*****</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash_div_3"></div>
+                </div>
+                <div class="right_2">
+                    <div class="r_r">
+                        <div class="rr_h"><span>Manage Reservations Requests</span></div>
+                        <div>
+                            <table>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Reservation By</th>
+                                    <th class="date">Date</th>
+                                    <th class="accept">Accept</th>
+                                    <th class="reject">Reject</th>
+                                </tr>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Mr. X</td>
+                                    <td>12/12/2022</td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Mr. X</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>Mr. X</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="right_3"></div>
+                <div class="right_4"></div>
+
+            </div>
+        </div>
+        <footer>
+            <div class="f_div">
+                <div class="f_div_1">
+                    <span>Tutor @2022 All Right Reserved</span></div>
+                <div class="f_div_2">
+                    <span>Designed By TEAM 12</span></div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        function func(check) {
+            element1 = document.getElementsByClassName('right_1');
+            element2 = document.getElementsByClassName('right_2');
+            element3 = document.getElementsByClassName('right_3');
+            if (check === 'dashboard') {
+                element1[0].style.display = 'grid';
+                element2[0].style.display = 'none';
+                element3[0].style.display = 'none';
+
+            } else if (check === 'reserve') {
+                element1[0].style.display = 'none';
+                element2[0].style.display = 'grid';
+                element3[0].style.display = 'none';
+
+            } else if (check === 'rate') {
+                element1[0].style.display = 'none';
+                element2[0].style.display = 'none';
+                element3[0].style.display = 'flex';
+
+            }
+        }
+    </script>
+</html>

@@ -1,0 +1,569 @@
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            body {
+                margin: 0;
+            }
+            header {
+                background-color: aqua;
+                width: 100%;
+
+            }
+            footer {
+                width: 100%;
+                background-color: blueviolet;
+                height: 23px;
+            }
+            .f_div {
+                display: flex;
+                flex-direction: row;
+                justify-content: space-around;
+            }
+            .f_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .f_div_2 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            header nav {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+            }
+            .nav_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                padding: 5px 5px 3px;
+                font-family: cursive;
+                color: #9d5617;
+            }
+            .nav_div_2 {
+                margin-right: 35px;
+                display: flex;
+                flex-direction: row;
+                justify-content: flex-end;
+                padding: 5px 5px 3px;
+            }
+            /* .nav_div_2 button a{
+                text-decoration: none;
+                color: cornflowerblue;
+            }
+            .nav_div_2 button a:hover{
+                color: #ffffff;
+                background-color: #c31e54;
+                cursor: pointer;
+            } */
+            .nav_div_2 button {
+                border-radius: 4px;
+                padding: 5px;
+                border: 2px;
+                border-style: solid;
+                border-color: #d93a00;
+                color: #c31e54;
+                background-color: #ffffff;
+                transition: color 0.25s;
+                transition: background-color 0.25s;
+            }
+            .nav_div_2 button:hover {
+                color: #ffffff;
+                background-color: #c31e54;
+                cursor: pointer;
+            }
+
+            .main {
+                display: grid;
+                grid-template-columns: 1fr 7fr;
+            }
+            .sidebar {
+                background-color: cadetblue;
+                height: 692px;
+            }
+            .sidebar div {
+                padding: 5px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                height: 58px;
+                background-color: cadetblue;
+                border-top: 0;
+                border-bottom: 3px;
+                border-style: solid;
+                border-color: #6cd992;
+            }
+            .sidebar a {
+                padding: 10px 10px 5px 5px;
+                text-align: center;
+                text-decoration: none;
+                color: antiquewhite;
+                font-family: cursive;
+            }
+            .sidebar div,
+            a:hover {
+                background-color: gray;
+                width: 100%;
+                padding-top: 15px;
+            }
+
+            .right_main {
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                background-image: url("/images/c22dcc1a3e82d07fb7af3de855bc5165b925c957-1200x769.jpg");
+                height: 692px;
+                overflow: auto;
+            }
+            .right_1 {
+                display: grid;
+                grid-template-rows: 150px 100px 1fr;
+                background-color: rgba(222, 184, 135, 0.755);
+                height: 692px;
+                overflow: auto;
+            }
+            .dash_div_1 {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+            }
+
+            .dash_div_1 span {
+                font-family: monospace;
+                font-size: 30px;
+                color: white;
+            }
+
+            .dash_div_2 {
+                margin-left: 15px;
+                margin-right: 15px;
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                align-items: center;
+                column-gap: 20px;
+            }
+
+            .dash_div_2_1 {
+                font-family: monospace;
+                font-size: 25px;
+                display: flex;
+                flex-direction: row;
+                padding-left: 25px;
+                background-color: white;
+                height: 100%;
+                align-items: center;
+                border-top: 0;
+                border-right: 0;
+                border-bottom: 0;
+                border-left: -15px;
+                border-style: solid;
+                border-color: greenyellow;
+            }
+            .right_2 {
+                display: none;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .tutor_profiles {
+                display: grid;
+                grid-template-columns: 1fr 1fr 1fr;
+                margin-left: 100px;
+                margin-right: 100px;
+                column-gap: 5px;
+                grid-row-gap: 5px;
+            }
+            .profile {
+                border: 1px;
+                border-style: solid;
+            }
+            .imag {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+            .image_tutor {
+                margin: 1px;
+                height: 200px;
+                border-radius: 100px;
+            }
+
+            .p_name {
+                font-family: Arial, Helvetica, sans-serif;
+                color: #a95109;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+
+            .p_button {
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin-bottom: 5px;
+            }
+            .p_button button:hover {
+                cursor: pointer;
+            }
+            .right_3 {
+                display: none;
+                justify-content: center;
+            }
+            .rating {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+            }
+            .rating form {
+                padding: 25px 10px 25px 25px;
+                background-color: white;
+                height: 150px;
+                width: 350px;
+                border-left: #6cd992;
+                border-width: 5px;
+                border-style: solid;
+
+            }
+            .welcome {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 30px;
+                margin-bottom: 15px;
+            }
+            .t_n span {
+                font-size: 20px;
+                font-family: cursive;
+                margin-bottom: 5px;
+            }
+            .t_n input {
+                height: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .t_r span {
+                font-size: 20px;
+                font-family: cursive;
+                margin-bottom: 5px;
+            }
+            .t_r input {
+                height: 30px;
+                width: 100%;
+                margin-bottom: 10px;
+            }
+            .s_r input {
+                font-family: 'Courier New', Courier, monospace;
+                font-size: 18px;
+                color: rebeccapurple;
+                height: 25px;
+                width: 100%;
+                background-color: #6cd992;
+                border-radius: 5px;
+                transition: background-color 0.25s;
+            }
+            .s_r input:hover {
+                background-color: aquamarine;
+                color: black;
+                cursor: pointer;
+            }
+        </style>
+    </head>
+    <body>
+        <header>
+            <nav>
+                <div class="nav_div_1">
+                    <span>Welcome Back!</span></div>
+                <div class="nav_div_2">
+                    <button onclick="window.location.href='signin.html';">Logout</button>
+                </div>
+            </nav>
+        </header>
+        <div class="main">
+            <div class="sidebar">
+                <div>
+                    <a href="#" onclick="func('dashboard')">Dashboard</a>
+                </div>
+                <div>
+                    <a href="#" onclick="func('reserve')">Reserve A Tutor</a>
+                </div>
+                <div>
+                    <a href="#" onclick="func('rate')">Rate a Tutor</a>
+                </div>
+            </div>
+            <div class="right_main">
+                <div class="right_1">
+                    <div class="dash_div_1">
+                        <span>Welcome To Parents Portal</span></div>
+                    <div class="dash_div_2">
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Student Performance</p>
+                                <p>4/5</p>
+                            </div>
+                        </div>
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Inquiries Answered</p>
+                                <p>05</p>
+                            </div>
+                        </div>
+                        <div class="dash_div_2_1">
+                            <div>
+                                <p>Tutor Tutor Ratings</p>
+                                <p>02 Done</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="dash_div_3"></div>
+                </div>
+                <div class="right_2">
+                    <div class="tutor_profiles">
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Emran Khan</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Md Nur Nobi</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Mahfuz Ahammed</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Ashif Iqbal</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Md Moniruzzaman</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Anamul Haque</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Osman Goni</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Abu Shaed</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Suruj Ahmed</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Ashif Iqbal</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Md Moniruzzaman</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Anamul Haque</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Md Nur Nobi</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Mahfuz Ahammed</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Ashif Iqbal</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Md Moniruzzaman</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="images/graduate-avatar-icon-vector-9780085.webp"></div>
+                            <div class="p_name">Anamul Haque</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img
+                                class="image_tutor"
+                                src="images/full-face-young-human-with-glasses-isolated-man-vector-31672224.webp"></div>
+                            <div class="p_name">Emran Khan</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/modiji.jpeg"></div>
+                            <div class="p_name">Narendra Modi</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/donald trump.jpg"></div>
+                            <div class="p_name">Donald Trump</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/vladimir putin.webp"></div>
+                            <div class="p_name">Vladimir Putin</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/220px-Kim_Jong-un_2019_(cropped).jpg"></div>
+                            <div class="p_name">Kim Jong Uong</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/Justin_Trudeau_2014-.jpg"></div>
+                            <div class="p_name">Justin Trudeau</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                        <div class="profile">
+                            <div class="imag"><img class="image_tutor" src="/images/zelensky.png"></div>
+                            <div class="p_name">Vladimir Jelenesky</div>
+                            <div class="p_button">
+                                <button>Hire Now</button>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="right_3">
+                    <div class="rating">
+                        <div class="welcome">
+                            <span>Welcome To Parent Portal</span></div>
+                        <div>
+                            <form action="">
+                                <div class="t_n">
+                                    <div>
+                                        <span>Tutor Name</span></div>
+                                    <div><input type="text" placeholder="Enter Tutor Name"></div>
+                                </div>
+                                <div class="t_r">
+                                    <div>
+                                        <span>Ratings out of five</span></div>
+                                    <div><input type="number" placeholder="0"></div>
+                                </div>
+                                <div class="s_r"><input type="submit" value="Submit Ratings"></div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer>
+            <div class="f_div">
+                <div class="f_div_1">
+                    <span>Tutor @2022 All Right Reserved</span></div>
+                <div class="f_div_2">
+                    <span>Designed By TEAM 12</span></div>
+            </div>
+        </footer>
+    </body>
+    <script>
+        function func(check) {
+            element1 = document.getElementsByClassName('right_1');
+            element2 = document.getElementsByClassName('right_2');
+            element3 = document.getElementsByClassName('right_3');
+            if (check === 'dashboard') {
+                element1[0].style.display = 'grid';
+                element2[0].style.display = 'none';
+                element3[0].style.display = 'none';
+
+            } else if (check === 'reserve') {
+                element1[0].style.display = 'none';
+                element2[0].style.display = 'flex';
+                element3[0].style.display = 'none';
+
+            } else if (check === 'rate') {
+                element1[0].style.display = 'none';
+                element2[0].style.display = 'none';
+                element3[0].style.display = 'flex';
+
+            }
+        }
+    </script>
+</html>
